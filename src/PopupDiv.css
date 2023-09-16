@@ -1,0 +1,104 @@
+.popup-container {
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .open-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* .popup-div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: gray;
+    transform: translateY(100%);
+    transition: height 1s ease, transform 1s ease;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-snap-points-y: repeat(0%, 50%, 100%);
+  } */
+  .popup-div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: gray;
+    transform: translateY(100%);
+    transition: transform 1s ease, height 1s ease; 
+    overflow-y: auto;
+  }  
+  
+  .open {
+    height: 100%;
+    transform: translateY(0);
+  }
+  p{
+    color:black;
+  }
+  .close-button {
+    background-color: #007bff;
+    color: blue;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .close-button:focus {
+    outline: none;
+  }
+  
+  .popup-div > .handle {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: grab;
+  }
+  
+  .popup-div.half-open > .handle {
+    cursor: grabbing;
+  }
+  .popup-div.dragging {
+    cursor: grabbing;
+  }
+  
+  .popup-div.dragging > .handle {
+    cursor: grabbing;
+  }
+  .popup-div >p{
+    color: black;
+  }
+  .popup-div.half-open > p {
+    display: none;
+    display: block;
+    animation: slideUp 1.5s ease;
+  }
+  
+  .popup-div.full-open > .handle {
+    display: none;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #mytxt {
+    overflow-y: auto;
+    max-height: 50vh;
+  }
